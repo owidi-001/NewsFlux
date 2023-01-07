@@ -14,6 +14,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _selectedCategory = 0;
 
+  String title = "All";
+
   List<String> categories = [
     "All",
     "How To Guides",
@@ -31,8 +33,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    String title = categories[_selectedCategory];
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
