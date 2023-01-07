@@ -4,7 +4,7 @@ class Source {
 
   Source(this.id, this.name);
 
-  Source.fromJson(dynamic json) {
+  Source.fromJson(Map<String, dynamic> json) {
     id = json["id"];
     name = json["name"];
   }
@@ -31,11 +31,12 @@ class Article {
   String? urlToImage;
   String? publishedAt;
   String? content;
+  bool isFavourite = false;
 
   Article(this.source, this.author, this.title, this.description, this.url,
-      this.urlToImage, this.publishedAt, this.content);
+      this.urlToImage, this.publishedAt, this.content, this.isFavourite);
 
-  Article.fromJson(dynamic json) {
+  Article.fromJson(Map<String, dynamic> json) {
     source = Source.fromJson(json["source"]);
     author = json["author"];
     title = json["title"];
@@ -83,6 +84,6 @@ class Article {
         "https://imageio.forbes.com/specials-images/imageserve/63b9343eb393c2c56af26064/0x0.jpg?format=jpg&width=1200";
     publishedAt = "2023-01-07T09:28:04Z";
     content =
-        "Teslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… [+5768 chars] Teslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… [+5768 chars]Teslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… [+5768 chars] Teslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… [+5768 chars] Teslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… [+5768 chars] Teslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… [+5768 chars]Teslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… [+5768 chars] Teslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… [+5768 chars] Teslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… [+5768 chars] Teslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… [+5768 chars]Teslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… [+5768 chars] Teslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… [+5768 chars]";
+        "Teslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… \n Teslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… \n Teslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… \n Teslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… \n Teslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… \n Teslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… \nTeslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… \n Teslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… \n Teslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… \n Teslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… \nTeslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… \n Teslas image has been overshadowed for the last few months by Elon Musks antics around his purchase of Twitter. But the car company has continued to perform well, despite its share price dropping lik… \n";
   }
 }

@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/material.dart';
 import 'package:newsflux/constants/dimenstions.dart';
 
 class ContentBody extends StatelessWidget {
@@ -16,7 +14,14 @@ class ContentBody extends StatelessWidget {
       delegate: SliverChildBuilderDelegate(
           (context, index) => Column(
                 children: [
-                  Text(contents[index]),
+                  Text(
+                    contents[index],
+                    // style: Theme.of(context).textTheme.bodyText1,
+                    style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black54),
+                  ),
                   SizedBox(
                     height: PADDING / 2,
                   )

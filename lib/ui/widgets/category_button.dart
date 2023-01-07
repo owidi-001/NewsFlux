@@ -3,8 +3,9 @@ import 'package:newsflux/constants/dimenstions.dart';
 
 class CategoryButton extends StatelessWidget {
   final String text;
-  final Function onTapCallBack;
+  final Function() onTapCallBack;
   final bool selected;
+
   const CategoryButton(
       {super.key,
       required this.text,
@@ -20,12 +21,15 @@ class CategoryButton extends StatelessWidget {
           color: selected ? Colors.black87 : Colors.transparent,
           border: Border.all(width: 1, color: Colors.black26),
           borderRadius: BorderRadius.circular(PADDING / 4)),
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: PADDING),
-        child: Text(
-          text,
-          style: TextStyle(
-            color: selected ? Colors.white : Colors.black54,
+      child: InkWell(
+        onTap: onTapCallBack,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: PADDING),
+          child: Text(
+            text,
+            style: TextStyle(
+              color: selected ? Colors.white : Colors.black54,
+            ),
           ),
         ),
       ),
