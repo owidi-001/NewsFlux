@@ -1,6 +1,5 @@
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
-def newsApiKey = properties.getProperty('newsapi.API_KEY')
 if (localPropertiesFile.exists()) {
     localPropertiesFile.withReader('UTF-8') { reader ->
         localProperties.load(reader)
@@ -8,6 +7,7 @@ if (localPropertiesFile.exists()) {
 }
 
 def flutterRoot = localProperties.getProperty('flutter.sdk')
+// def newsAPIKey = localProperties.getProperty('newsAPIKey')
 if (flutterRoot == null) {
     throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
 }
@@ -52,7 +52,7 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
-        manifestPlaceholders = [newsApiKey: newsApiKey]
+        // manifestPlaceholders += [newsAPIKey:newsAPIKey]
     }
 
     buildTypes {

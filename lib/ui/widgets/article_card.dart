@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newsflux/constants/dimenstions.dart';
-import 'package:newsflux/models/article.model.dart';
+import 'package:newsflux/models/article_model.dart';
 import 'package:newsflux/ui/detail.screen.dart';
 import 'package:newsflux/utils/string_capitalize.dart';
 
@@ -49,6 +49,7 @@ class ArticleCard extends StatelessWidget {
                         overflow: TextOverflow.clip,
                         maxLines: 2,
                       ),
+                      Divider(),
                       SizedBox(
                         height: PADDING / 2,
                       ),
@@ -56,7 +57,7 @@ class ArticleCard extends StatelessWidget {
                         capitalize(article.description!),
                         style: Theme.of(context).textTheme.bodyText1,
                         overflow: TextOverflow.fade,
-                        maxLines: 5,
+                        maxLines: 4,
                       ),
                     ],
                   ),

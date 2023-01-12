@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:newsflux/constants/dimenstions.dart';
-import 'package:newsflux/models/article.model.dart';
+import 'package:newsflux/models/article_model.dart';
 import 'package:newsflux/ui/widgets/content_body.dart';
 import 'package:newsflux/utils/date_converter.dart';
 

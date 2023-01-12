@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:newsflux/constants/dimenstions.dart';
-import 'package:newsflux/models/article.model.dart';
+import 'package:newsflux/models/article_model.dart';
+import 'package:newsflux/ui/detail.screen.dart';
 
 class HeadlineCard extends StatelessWidget {
   final Article article;
-  final Function() onTapCallBack;
 
-  const HeadlineCard(
-      {super.key, required this.article, required this.onTapCallBack});
+  const HeadlineCard({super.key, required this.article});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTapCallBack,
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: ((context) => DetailScreen(
+                article: article,
+              )),
+        ),
+      ),
       child: Container(
         // height: 200,
         // width: 200,

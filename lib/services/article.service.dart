@@ -1,36 +1,48 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
-import 'package:newsflux/models/article.model.dart';
+import 'package:newsflux/constants/keys.dart';
+import 'package:newsflux/models/article_model.dart';
 import 'package:http/http.dart' as http;
 
-class ArticleService {
+class ArticleService with ChangeNotifier {
   // fetch articles
-  Future<List<Article>> fetchArticles(String url) async {
+  Future<List<Article>> fetchArticles(
+      String toUrl, Map<String, String> params) async {
     List<Article> articles = [];
 
-    // var url =
-    //     Uri.https('www.googleapis.com', '/books/v1/volumes', {'q': '{http}'});
+    
+    params.addAll({'apiKey': NEWS_KEY});
 
-    var url = Uri.https(
-        "https://newsapi.org/v2/everything?q=bitcoin&apiKey=880a2688d3d9431b80669084b3fb4ffc");
+    var url = Uri.https("newsapi.org", '/v2/$toUrl', params);
 
-    // Await the http get response, then decode the json-formatted response.
+    if (kDebugMode) {
+      print("Init fetch");
+    }
     var response = await http.get(url);
-    if (response.statusCode == 200) {
-      var jsonResponse =
-          jsonDecode(response.body) as List<Map<String, dynamic>>;
-      articles = jsonResponse.map((e) => Article.fromJson(e)).toList();
 
+    if (response.statusCode == 200) {
+      var data = jsonDecode(response.body)["articles"] as List;
+
+      articles = data.map((e) => Article.fromJson(e)).toList();
       if (kDebugMode) {
-        print(articles);
+        print(articles.length);
+        for (var element in articles) {
+          print(element.title);
+        }
+        print("DONE");
       }
     } else {
       if (kDebugMode) {
-        print('Request failed with status: ${response.statusCode}.');
+        print("An error occured");
+        print(response.statusCode);
+        print(response.body);
       }
     }
-
+    if (kDebugMode) {
+      print("Returning values");
+    }
     return articles;
   }
 }
