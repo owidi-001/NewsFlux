@@ -16,31 +16,31 @@ class ArticleService with ChangeNotifier {
 
     var url = Uri.https("newsapi.org", '/v2/$toUrl', params);
 
-    if (kDebugMode) {
-      print("Init fetch");
-    }
+    // if (kDebugMode) {
+    //   print("Init fetch");
+    // }
     var response = await http.get(url);
 
     if (response.statusCode == 200) {
       var data = jsonDecode(response.body)["articles"] as List;
 
       articles = data.map((e) => Article.fromJson(e)).toList();
-      if (kDebugMode) {
-        print(articles.length);
-        for (var element in articles) {
-          print(element.title);
-        }
-        print("DONE");
-      }
+      // if (kDebugMode) {
+      //   print(articles.length);
+      //   for (var element in articles) {
+      //     print(element.title);
+      //   }
+      //   print("DONE");
+      // }
     } else {
-      if (kDebugMode) {
-        print("An error occured");
-        print(response.statusCode);
-        print(response.body);
-      }
+      // if (kDebugMode) {
+      //   print("An error occured");
+      //   print(response.statusCode);
+      //   print(response.body);
+      // }
     }
     if (kDebugMode) {
-      print("Returning values");
+      // print("Returning values");
     }
     return articles;
   }

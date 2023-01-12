@@ -125,9 +125,13 @@ class _HomePageState extends ConsumerState<HomePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        leading: Image.asset("assets/icons/logo_int.png"),
-        // title: Text("NewsFlux"),
-        // centerTitle: true,
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ClipOval(child: Image.asset("assets/icons/logo_int.png")),
+        ),
+        // title: Text("NewsFlux",style: Theme.of(context).textTheme.bodyText1,),
+        title: const Text("NewsFlux", style: TextStyle(color: Colors.black54)),
+        centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
         actions: [
