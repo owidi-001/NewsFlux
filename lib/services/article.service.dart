@@ -12,7 +12,6 @@ class ArticleService with ChangeNotifier {
       String toUrl, Map<String, String> params) async {
     List<Article> articles = [];
 
-    
     params.addAll({'apiKey': NEWS_KEY});
 
     var url = Uri.https("newsapi.org", '/v2/$toUrl', params);

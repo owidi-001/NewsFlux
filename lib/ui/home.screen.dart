@@ -131,17 +131,17 @@ class _HomePageState extends ConsumerState<HomePage> {
         backgroundColor: Colors.white,
         elevation: 0,
         actions: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: PADDING / 2),
-            child: InkWell(
-              onTap: () {},
-              child: const Icon(
-                Icons.search,
-                color: Colors.black,
-                size: 28,
-              ),
-            ),
-          ),
+          // Padding(
+          //   padding: EdgeInsets.symmetric(horizontal: PADDING / 2),
+          //   child: InkWell(
+          //     onTap: () {},
+          //     child: const Icon(
+          //       Icons.search,
+          //       color: Colors.black,
+          //       size: 28,
+          //     ),
+          //   ),
+          // ),
           SizedBox(
             width: PADDING / 2,
           ),

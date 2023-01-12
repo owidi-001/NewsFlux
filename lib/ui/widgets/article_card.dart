@@ -22,13 +22,14 @@ class ArticleCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            height: 200,
-            width: 150,
-            child: Image.network(
-              article.urlToImage!,
-              fit: BoxFit.cover,
-            ),
-          ),
+              height: 200,
+              width: 150,
+              child: article.urlToImage != null
+                  ? Image.network(
+                      article.urlToImage!,
+                      fit: BoxFit.cover,
+                    )
+                  : Container(color: Colors.black38,)),
           SizedBox(
             width: PADDING,
           ),
